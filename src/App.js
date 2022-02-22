@@ -5,18 +5,18 @@ function App() {
 
   var letterIsOpen
 
-  fun (() => {
-    letterIsOpen = false
-  })
+  const rows = [0,1,2,3,4]
 
 
 
   return (
     <div className="App">
-      <h3>Hi</h3>
-      <Hello
-        isOpen={letterIsOpen}
-        />
+      <div className="title">
+        <h3 className="title">Title</h3>
+      </div>
+      <div className="letter-area">
+        {rows.map(() => <Hello/>)}
+      </div>
     </div>
     // Initialize stuff
   );

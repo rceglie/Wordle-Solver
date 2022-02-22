@@ -1,5 +1,5 @@
 :root {
-  --letter-btn-size: 100px;
+  --circle: 75px;
 }
 
 body {
@@ -19,7 +19,7 @@ code {
 .letter {
   align-items: center;
   background-color: #fff;
-  border-radius: var(--letter-btn-size);
+  border-radius: var(--circle);
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
@@ -27,7 +27,7 @@ code {
   cursor: pointer;
   fill: currentcolor;
   font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: calc(var(--letter-btn-size) / 2);
+  font-size: calc(var(--circle) / 2);
   font-weight: 500;
   letter-spacing: .25px;
   line-height: normal;
@@ -37,8 +37,26 @@ code {
   position: relative;
   text-transform: none;
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  width:var(--letter-btn-size);
-  height:var(--letter-btn-size);
+  width:var(--circle);
+  height:var(--circle);
   will-change: transform,opacity;
   margin: 10px;
+}
+
+.letter-area{
+  width:40%;
+  display:flex;
+  flex-direction:column;
+  margin:10px;
+  border-radius:10px; 
+  background-color:grey;
+}
+
+.letter-row{
+  margin:5px;
+  height: 100px;
+}
+
+.title{
+  height:25px;
 }

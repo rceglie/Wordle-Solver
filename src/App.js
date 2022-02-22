@@ -7,13 +7,17 @@ function App() {
 
   const rows = [0,1,2,3,4]
 
-  var state = 0
+  var guess = 0
+  var letternum = 0
 
-  var keydown = false;
   document.addEventListener('keydown', function(event) {
-    if (/^[A-Za-z]$/.test(event.key)){
-      console.log(event.key)
-      console.log(document.getElementsByClassName("row-3 letter-2").textContent)
+    if (/^[A-Za-z]$/.test(event.key) && letternum < 5){
+      document.getElementsByClassName(`row-${guess} letter-${letternum}`).item(0).textContent = event.key
+      letternum++
+    }
+    if (letternum > 0 && event.key === "Backspace"){
+      document.getElementsByClassName(`row-${guess} letter-${letternum-1}`).item(0).textContent = ""
+      letternum--
     }
   })
 

@@ -44,7 +44,7 @@ code {
 }
 
 .letter-area{
-  width:40%;
+  width:50%;
   display:flex;
   flex-direction:column;
   margin:10px;
@@ -55,6 +55,7 @@ code {
 .letter-row{
   margin:5px;
   height: 100px;
+  display:flex;
 }
 
 .title{

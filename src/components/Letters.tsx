@@ -2,19 +2,18 @@ import React from 'react';
 import '../index.css';
 
 type Props = {
-    isOpen: boolean
+    row: number
 }
 
-const Hello = ({isOpen}:Props) => {
+const LetterRow = ({row}:Props) => {
+
+    const letters = [0,1,2,3,4]
+
     return(
         <div className="letter-row">
-            <button className="letter">M</button>
-            <button className="letter">A</button>
-            <button className="letter">D</button>
-            <button className="letter">D</button>
-            <button className="letter">Y</button>
+            {letters.map((letter) => <button className={`letter row-${row} letter-${letter}`} >{letter}</button>)}
         </div>
     )
 }
 
-export default Hello
+export default LetterRow

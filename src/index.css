@@ -116,21 +116,22 @@ body {
 }
 
 .results-area{
-  height:100%;
-  width:70%;
+
+  inline-size:100%;
+  align-items: center;
+  height:98vh;
   display:flex;
   flex-direction:column;
   margin:1vh .5vw 1vh 1vh;
   border-radius:10px; 
   background-color:rgb(86, 163, 252);
-  inline-size:100%;
-  align-items: center;
 }
 
 .guesses{
   width:75%;
   word-break: break-word;
   margin:50px;
+  overflow-y:scroll;
 }
 
 .btn-area{

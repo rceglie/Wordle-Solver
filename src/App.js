@@ -6,13 +6,10 @@ import {Calculate} from './Calculate.mjs'
 function App() {
 
   const rows = [0,1,2,3,4,5]
-
-  const guess = ['','','','','']
-  const guessdata = ["x","x","x","x","x"]
-
+  var guess = ['','','','','']
+  var guessdata = ["x","x","x","x","x"]
   var guessnum = 0
   var letternum = 0
-
   var guesses = []
 
   const freezeRow = (r) => {
@@ -48,6 +45,26 @@ function App() {
       letternum=0
       guessdata = ["x","x","x","x","x"]
     }
+  }
+
+  function reset () {
+    guess = ['','','','','']
+    guessdata = ["x","x","x","x","x"]
+    guessnum = 0
+    letternum = 0
+    guesses = []
+    for (var i = 0; i < 5; i++){
+      for (var j = 0; j < 5; j++){
+        var btn = document.getElementsByClassName(`row-${i} letter-${j}`).item(0)
+        btn.style.backgroundColor="white"
+        btn.style.color="black"
+        btn.textContent=""
+        if (i != 0){
+          btn.setAttribute("data-active", "false")
+        }
+      }
+    }
+
   }
 
 
@@ -106,8 +123,9 @@ function App() {
     <div className="App">
       <div className="letter-area">
         {rows.map((row) => LetterRow(row))}
-        <div className="guess-area">
+        <div className="btn-area">
           <button className="guess-btn" onClick={findWords}>Find Words</button>
+          <button className="reset-btn" onClick={reset}>Reset</button>
         </div>
       </div>
       <div className="results-area">

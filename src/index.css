@@ -44,10 +44,10 @@ body {
 }
 
 .letter-area{
-  height:95%;
+  height:98vh;
   display:flex;
   flex-direction:column;
-  margin:10px 10px;
+  margin:1vh .5vw 1vh 1vh;
   border-radius:10px; 
   background-color:rgb(86, 163, 252);
 }
@@ -68,11 +68,11 @@ body {
   border-style: none;
   box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
   box-sizing: border-box;
-  color: #3c4043;
+  color: #000000;
   cursor: pointer;
   fill: currentcolor;
   font-family: "Google Sans",Roboto,Arial,sans-serif;
-  font-size: calc(35px);
+  font-size: 3.75vh;
   font-weight: 500;
   letter-spacing: .25px;
   line-height: normal;
@@ -82,10 +82,37 @@ body {
   position: relative;
   text-transform: none;
   transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
-  width:90%;
-  height:50px;
+  width:40%;
+  height:8vh;
   will-change: transform,opacity;
-  margin: 0 0 5px 0;
+  margin: 0 0 0 2.5vw;
+}
+
+.reset-btn{
+  align-items: center;
+  background-color: #fff;
+  border-radius: 5px;
+  border-style: none;
+  box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px,rgba(0, 0, 0, .14) 0 6px 10px 0,rgba(0, 0, 0, .12) 0 1px 18px 0;
+  box-sizing: border-box;
+  color: #000000;
+  cursor: pointer;
+  fill: currentcolor;
+  font-family: "Google Sans",Roboto,Arial,sans-serif;
+  font-size: 3.75vh;
+  font-weight: 500;
+  letter-spacing: .25px;
+  line-height: normal;
+  max-width: 100%;
+  overflow: visible;
+  padding: 2px 24px;
+  position: relative;
+  text-transform: none;
+  transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1),opacity 15ms linear 30ms,transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+  width:40%;
+  height:8vh;
+  will-change: transform,opacity;
+  margin: 0 0 0 2.5vw;
 }
 
 .results-area{
@@ -93,7 +120,7 @@ body {
   width:70%;
   display:flex;
   flex-direction:column;
-  margin:10px 10px 10px 0;
+  margin:1vh .5vw 1vh 1vh;
   border-radius:10px; 
   background-color:rgb(86, 163, 252);
   inline-size:100%;
@@ -104,5 +131,8 @@ body {
   width:75%;
   word-break: break-all;
   margin:50px;
+}
 
+.btn-area{
+  display:flex;
 }

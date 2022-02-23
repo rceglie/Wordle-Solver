@@ -1,5 +1,6 @@
 import './App.css';
-import LetterRow from './components/Letters'
+import React from 'react'
+//import LetterRow from './components/Letters'
 
 function App() {
 
@@ -15,11 +16,16 @@ function App() {
       var btn = document.getElementsByClassName(`row-${guessnum} letter-${i}`).item(0)
       btn.style.backgroundColor = btn.getAttribute("data-color");
       btn.style.color = "white"
+      btn.disabled=false
     }
   }
 
   function guess () {
     updateColors()
+  }
+
+  function letterPressed () {
+    console.log("button pressed")
   }
 
   document.addEventListener('keydown', function(event) {
@@ -36,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <div className="letter-area">
-        {rows.map((row) => <LetterRow row={`${row}`}/>)}
+        {rows.map((row) => LetterRow(row))}
         <div className="guess-area">
           <button className="guess-btn" onClick={guess}>Guess</button>
         </div>
@@ -44,6 +50,22 @@ function App() {
     </div>
     // Initialize stuff
   );
+}
+
+
+function LetterRow (row) {
+
+  const letters = [0,1,2,3,4]
+
+  return(
+      <div className="letter-row">
+          {letters.map((letter) => <button 
+              className={`letter row-${row} letter-${letter}`}
+              data-color="grey"
+              disabled
+              ></button>)}
+      </div>
+  )
 }
 
 export default App;

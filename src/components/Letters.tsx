@@ -11,7 +11,11 @@ const LetterRow = ({row}:Props) => {
 
     return(
         <div className="letter-row">
-            {letters.map((letter) => <button className={`letter row-${row} letter-${letter}`} data-color="grey"></button>)}
+            {letters.map((letter) => <button 
+                className={`letter row-${row} letter-${letter}`}
+                data-color="grey"
+                disabled
+                ></button>)}
         </div>
     )
 }

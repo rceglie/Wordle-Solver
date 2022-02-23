@@ -1,7 +1,4 @@
 import { WORDS } from './words_alpha.mjs'
-
-console.log(WORDS)
-
 var SCORES = {"a": 1, "c": 3, "b": 3, "e": 1, "d": 2, "g": 2, 
           "f": 4, "i": 1, "h": 4, "k": 5, "j": 8, "m": 3, 
           "l": 1, "o": 1, "n": 1, "q": 10, "p": 3, "s": 1, 
@@ -15,7 +12,7 @@ WORDS.forEach((word) => {
     }
 })
 
-console.log(Calculate(allwords, ['s','t',"o",'r','a'],["green", "green", "yellow", "gray", "gray"],0))
+console.log(Calculate(allwords, ['e','e','t','r','a'],["yellow", "gray", "gray", "gray", "gray"],0))
 
 export function Calculate(words, letters, data, unique){
 
@@ -29,7 +26,10 @@ export function Calculate(words, letters, data, unique){
             includes.push(letters[i])
             incorrect[i] = letters[i]
         } else if (data[i] == "gray"){
-            excludes.push(letters[i])
+            if (!includes.includes(letters[i]) && !correct.includes(letters[i])){
+                excludes.push(letters[i])
+            }
+            incorrect[i] = letters[i]
         } else if (data[i] == "green"){
             correct[i] = letters[i]
         }

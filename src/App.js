@@ -39,8 +39,13 @@ function App() {
     if (!guessdata.includes("x")){
       freezeRow(guessnum)
       guesses[guessnum] = Calculate((guessnum == 0 ? 1 : guesses[guessnum-1]), guess, guessdata, 0)
-      document.getElementsByClassName("guesses").item(0).textContent = guesses[guessnum]
-      document.getElementsByClassName("guess-count").item(0).textContent = guesses[guessnum].length
+      document.getElementsByClassName("guesses").item(0).textContent = ""
+      for (var i = 0; i < guesses[guessnum].length; i++){
+        document.getElementsByClassName("guesses").item(0).textContent = 
+          document.getElementsByClassName("guesses").item(0).textContent + guesses[guessnum][i] +
+          " "
+      }
+      document.getElementsByClassName("guess-count").item(0).textContent = "Possible words: " + guesses[guessnum].length
       guessnum++
       letternum=0
       guessdata = ["x","x","x","x","x"]
@@ -130,8 +135,14 @@ function App() {
       </div>
       <div className="results-area">
         <h2>Guesses</h2>
-        <h2 className="guess-count">count</h2>
-        <p className="guesses">guesses here</p>
+        <h2 className="guess-count"></h2>
+        <p className="guesses">
+          Welcome to the Wordle Solver!<br />
+          To start, type in your guess.<br />
+          Click on each letter to change its color based on the result<br />
+          When all letters have been assigned colors, click "Find Words"<br />
+          The words which fit your guesses will show up here!
+        </p>
       </div>
     </div>
   );

@@ -129,7 +129,7 @@ body {
 
 .guesses{
   width:75%;
-  word-break: break-all;
+  word-break: break-word;
   margin:50px;
 }
 

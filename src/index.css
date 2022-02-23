@@ -131,7 +131,7 @@ body {
   width:75%;
   word-break: break-word;
   margin:50px;
-  overflow-y:scroll;
+  overflow-y:auto;
 }
 
 .btn-area{

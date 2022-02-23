@@ -12,7 +12,7 @@ WORDS.forEach((word) => {
     }
 })
 
-console.log(Calculate(allwords, ['e','e','t','r','a'],["yellow", "gray", "gray", "gray", "gray"],0))
+console.log(Calculate(allwords, ['k','a','y','a','k'],["gray", "gray", "gray", "yellow", "green"],0))
 
 export function Calculate(words, letters, data, unique){
 
@@ -32,6 +32,16 @@ export function Calculate(words, letters, data, unique){
             incorrect[i] = letters[i]
         } else if (data[i] == "green"){
             correct[i] = letters[i]
+        }
+    }
+
+    for (var i = 0; i < 5; i++){
+        if (excludes.includes(correct[i])){
+            excludes.splice(excludes.indexOf(correct[i]), 1)
+
+        }
+        if (excludes.includes(incorrect[i]) && data[i] == "yellow"){
+            excludes.splice(excludes.indexOf(incorrect[i]), 1)
         }
     }
 

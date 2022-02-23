@@ -89,3 +89,22 @@ body {
   will-change: transform,opacity;
   margin: 0 0 5px 0;
 }
+
+.results-area{
+  height:100%;
+  width:70%;
+  display:flex;
+  flex-direction:column;
+  margin:5px 10px;
+  border-radius:10px; 
+  background-color:rgb(86, 163, 252);
+  inline-size:100%;
+  align-items: center;
+}
+
+.guesses{
+  width:75%;
+  word-break: break-all;
+  margin:50px;
+
+}

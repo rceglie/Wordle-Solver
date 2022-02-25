@@ -37,6 +37,7 @@ function App() {
   function findWords () {
     updateData()
     if (!guessdata.includes("x")){
+      document.getElementsByClassName("guesses").item(0).textContent = "Finding words\nThis may take a few seconds"
       freezeRow(guessnum)
       guesses[guessnum] = Calculate((guessnum == 0 ? 1 : guesses[guessnum-1]), guess, guessdata, 0)
       document.getElementsByClassName("guesses").item(0).textContent = ""
@@ -49,6 +50,8 @@ function App() {
       guessnum++
       letternum=0
       guessdata = ["x","x","x","x","x"]
+    } else{
+
     }
   }
 
@@ -61,8 +64,7 @@ function App() {
     for (var i = 0; i < 5; i++){
       for (var j = 0; j < 5; j++){
         var btn = document.getElementsByClassName(`row-${i} letter-${j}`).item(0)
-        btn.style.backgroundColor="white"
-        btn.style.color="black"
+        btn.style.backgroundColor="rgb(58, 58, 60)"
         btn.textContent=""
         if (i != 0){
           btn.setAttribute("data-active", "false")
@@ -83,8 +85,7 @@ function App() {
     if (letternum > 0 && event.key == "Backspace"){
       var btn = document.getElementsByClassName(`row-${guessnum} letter-${letternum-1}`).item(0)
       btn.textContent = ""
-      btn.style.backgroundColor = "white"
-      btn.style.color = "black"
+      btn.style.backgroundColor = "rgb(58, 58, 60)"
       btn.setAttribute("data-active", "false")
       letternum--
     }

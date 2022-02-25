@@ -23,6 +23,7 @@ function App() {
     for (var i = 0; i < 5; i++){
       var btn = document.getElementsByClassName(`row-${guessnum} letter-${i}`).item(0)
       guess[i] = btn.textContent
+      console.log(btn.style.backgroundColor)
       if (btn.style.backgroundColor == "rgb(58, 58, 60)"){
         guessdata[i] = "gray"
       } else if (btn.style.backgroundColor == "rgb(181, 159, 59)"){
@@ -37,7 +38,6 @@ function App() {
   function findWords () {
     updateData()
     if (!guessdata.includes("x")){
-      document.getElementsByClassName("guesses").item(0).textContent = "Finding words\nThis may take a few seconds"
       freezeRow(guessnum)
       guesses[guessnum] = Calculate((guessnum == 0 ? 1 : guesses[guessnum-1]), guess, guessdata, 0)
       document.getElementsByClassName("guesses").item(0).textContent = ""
@@ -51,7 +51,7 @@ function App() {
       letternum=0
       guessdata = ["x","x","x","x","x"]
     } else{
-
+      document.getElementsByClassName("guesses").item(0).textContent = "Make sure all letters are filled in before pressing \"Find Words\""
     }
   }
 
@@ -79,6 +79,7 @@ function App() {
     if (/^[A-Za-z]$/.test(event.key) && letternum < 5){
       var btn = document.getElementsByClassName(`row-${guessnum} letter-${letternum}`).item(0)
       btn.textContent = event.key
+      btn.style.backgroundColor = "rgb(58, 58, 60)"
       btn.setAttribute("data-active", "true")
       letternum++
     }
@@ -105,12 +106,12 @@ function App() {
 
       btn.style.color = "white"
       console.log(btn.style.backgroundColor)
-      if (btn.style.backgroundColor == "rgb(58, 58, 60)"){
-        btn.style.backgroundColor = "rgb(181, 159, 59)"
-      } else if (btn.style.backgroundColor == "rgb(181, 159, 59)"){
-        btn.style.backgroundColor = "rgb(83,141,78)"
+      if (btn.style.backgroundColor == "rgb(58, 58, 60)"){ // Is gray
+        btn.style.backgroundColor = "rgb(181, 159, 59)" // Make yellow
+      } else if (btn.style.backgroundColor == "rgb(181, 159, 59)"){ // Is yellow
+        btn.style.backgroundColor = "rgb(83,141,78)" // Make green
       } else {
-        btn.style.backgroundColor = "rgb(58, 58, 60)"
+        btn.style.backgroundColor = "rgb(58, 58, 60)" // Make gray
       }
     }
 
